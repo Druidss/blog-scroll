@@ -1,7 +1,81 @@
----
-const { isDark = false } = Astro.props;
----
+<div id="canvasContainer"></div>
+<style>
+  #canvasContainer {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script>
+  let scaleFactor = 5;
+  function setBackground() {
+    // delete old canvas if it exists
+    const oldCanvas = document.getElementById('canvasContainer')?.firstChild ?? null;
+    if (oldCanvas) {
+      document.getElementById('canvasContainer').removeChild(oldCanvas);
+    }
 
-<div class:list={['absolute inset-0', { 'bg-dark dark:bg-transparent': isDark }]}>
-  <slot />
-</div>
+    let width = document.documentElement.offsetWidth;
+    let height = document.documentElement.offsetHeight;
+
+    // Create image element
+    let img = new Image();
+    img.src = `/background/blurred-20-${Math.round(width / scaleFactor)}-${Math.round(
+      height / scaleFactor
+    )}.svg?${Date.now()}`;
+
+    img.onload = function () {
+      // Create canvas
+      let canvas = document.createElement('canvas');
+      canvas.setAttribute('style', 'width: 100%; height: 100%; image-rendering: pixelated;');
+      canvas.width = width;
+      canvas.height = height;
+
+      let ctx = canvas.getContext('2d');
+
+      // Draw image onto canvas
+      ctx.drawImage(img, 0, 0, width, height, 0, 0, width * scaleFactor, height * scaleFactor);
+
+      // Get image data from canvas
+      let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+
+      // Create a new canvas for the squares
+      let squaresCanvas = document.createElement('canvas');
+      squaresCanvas.width = canvas.width;
+      squaresCanvas.height = canvas.height;
+      let squaresCtx = squaresCanvas.getContext('2d');
+
+      // Define the size of the squares
+      let squareSize = 30;
+
+      // Loop over the image data in steps of squareSize
+      for (let x = 0; x < canvas.width; x += squareSize) {
+        for (let y = 0; y < canvas.height; y += squareSize) {
+          let averageR = imageData[(y * canvas.width + x) * 4];
+          let averageG = imageData[(y * canvas.width + x) * 4 + 1];
+          let averageB = imageData[(y * canvas.width + x) * 4 + 2];
+
+          // Draw a square on the squaresCanvas with the average color
+          squaresCtx.fillStyle = `rgb(${averageR}, ${averageG}, ${averageB})`;
+          squaresCtx.fillRect(x, y, squareSize, squareSize);
+        }
+      }
+
+      // Append the squaresCanvas to the document
+      document.getElementById('canvasContainer').appendChild(squaresCanvas);
+    };
+  }
+
+  setBackground();
+
+  var resizing;
+  window.onresize = function () {
+    clearTimeout(resizing);
+    resizing = setTimeout(setBackground, 500);
+  };
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'b') {
+      setBackground();
+    }
+  });
+</script>
