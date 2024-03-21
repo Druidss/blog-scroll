@@ -5,3 +5,4 @@
 - Astro
 - Thailwind
 - GSAP
+- locomotive-scroll
