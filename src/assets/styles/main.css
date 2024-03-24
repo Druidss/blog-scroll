@@ -1,0 +1,15 @@
+
+  /* DePixelHalbfett */
+  @font-face {
+    font-family: 'DePixelKlein';
+    src: url('../fonts/DePixelKlein.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+html, h2, a {
+    font-family: 'DePixelKlein', sans-serif;
+}
+
+
