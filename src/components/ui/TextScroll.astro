@@ -1,39 +1,78 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+---
 
 <!-- animejs here -->
+<WidgetWrapper>
+  <div class="splt codelabel1 text-4xl md:text-5xl lg:text-9xl mb-6">CODE</div>
+  <div class="splt codelabel2 text-4xl md:text-5xl lg:text-9xl">EXPERIMENT</div>
 
+  <style is:global>
+    .codelabel1 {
+      max-width: 100vw;
+    }
+  </style>
 
-<div id="codelabe1">CODE</div>
-<div id="codelabe2">EXPERIMENT</div>
-<style>
-  #canvasContainer {
-    width: 100%;
-    height: 100%;
-  }
-</style>
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import splt from 'spltjs';
+    import anime from 'animejs/lib/anime.es.js';
 
-<script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import splt from 'spltjs';
-  import anime from 'animejs/lib/anime.es.js';
+    gsap.registerPlugin(ScrollTrigger);
+    splt({ reveal: true });
 
-  splt({ reveal: true });
-  anime
-    .timeline({ loop: true })
-    .add({
-      targets: '.char',
-      opacity: [0, 1],
-      easing: 'easeOutExpo',
-      duration: 100,
-      offset: '-=775',
-      delay: (el, i) => 34 * (i + 1),
-    })
-    .add({
-      targets: '.char',
-      opacity: 0,
-      duration: 1000,
-      easing: 'easeOutExpo',
-      delay: 5000,
+    anime
+      .timeline({ loop: true })
+      .add({
+        targets: '.char',
+        opacity: [0, 1],
+        easing: 'easeOutExpo',
+        duration: 200,
+        offset: '-=775',
+        delay: (el, i) => 34 * (i + 1),
+      })
+      .add({
+        targets: '#i1, #i2, #i3, #i4, #i5, #i6, #i7, #i8, #i9, #i10, #i11, #i12, #i13, #i14',
+        opacity: 0,
+        duration: 1000,
+        easing: 'easeOutExpo',
+        delay: 1000,
+      });
+
+    gsap.to('.codelabel1', {
+      scrollTrigger: {
+        trigger: '.codelabel1',
+        start: '-100% center',
+        end: 'bottom center',
+        markers: true,
+        scrub: true,
+      },
+      duration: 200,
+      fontWeight: '20',
+      letterSpacing: '0.5rem', 
+      ease: 'back.out(1)',
+      startAt: {
+        fontWeight: '1000',
+        letterSpacing: '2em',
+      },
     });
-  gsap.registerPlugin(ScrollTrigger);
-</script>
+
+    gsap.to('.codelabel2', {
+      scrollTrigger: {
+        trigger: '.codelabel2',
+        start: '-90% center',
+        end: 'bottom center',
+        scrub: true,
+      },
+      duration: 200,
+      fontWeight: '100',
+      letterSpacing: '0.5rem', // 目标间距
+      ease: 'back.out(1)',
+      startAt: {
+        fontWeight: '900',
+        letterSpacing: '2em',
+      },
+    });
+  </script>
+</WidgetWrapper>
