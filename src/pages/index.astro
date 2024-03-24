@@ -4,6 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Content from '~/components/widgets/Content.astro';
+import TextScroll from '~/components/ui/TextScroll.astro';
 
 const metadata = {
   title: 'YU PIXEL - Yuxuans pixel scroll blog',
@@ -12,11 +13,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-
-
-
-  
-
   <BlogLatestPosts
     title="Find out more content in my scroll Blog"
     information={`The blog is used to display AstroWind documentation.
@@ -25,14 +21,16 @@ const metadata = {
                 `}
   />
 
-  <WidgetWrapper>
+  <TextScroll></TextScroll>
+
+  <!-- <WidgetWrapper>
     <iframe
       src="https://codesandbox.io/embed/r9jgdk?view=preview&module=%2FApp.js&hidenavigation=1"
       style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
       title="zealous-dust-r9jgdk"
       allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-  </WidgetWrapper>
+  </WidgetWrapper> -->
 
   <Content
     isReversed

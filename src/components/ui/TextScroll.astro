@@ -1,0 +1,44 @@
+<div id="codelabe1">CODE</div>
+<div id="codelabe2">EXPERIMENT</div>
+<style>
+  #canvasContainer {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import splt from 'spltjs';
+  import anime from 'animejs/lib/anime.es.js';
+
+  splt({ reveal: true });
+  // anime({
+  //   targets: '.char',
+  //   translateX: [0, -20],
+  //   direction: 'alternate',
+  //   loop: true,
+  //   delay: anime.stagger(25),
+  //   easing: 'cubicBezier(.71,-0.77,.43,1.67)',
+  // });
+
+  anime
+    .timeline({ loop: true })
+    .add({
+      targets: '.char',
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      duration: 100,
+      offset: '-=775',
+      delay: (el, i) => 34 * (i + 1),
+    })
+    .add({
+      targets: '.char',
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+      delay: 5000,
+    });
+  gsap.registerPlugin(ScrollTrigger);
+</script>
