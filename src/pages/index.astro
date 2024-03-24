@@ -2,9 +2,10 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-// import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import TextScroll from '~/components/ui/TextScroll.astro';
+import UxScroll from '~/components/ui/UXScroll.astro';
 
 const metadata = {
   title: 'YU PIXEL - Yuxuans pixel scroll blog',
@@ -13,13 +14,94 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <TextScroll />
+  <Hero
+    id="hero"
+    title="Yuxuan Yang"
+    tagline="YU PIXEL"
+    actions={[{ variant: 'primary', target: '_blank', text: 'Hire me', href: 'https://github.com/Druidss' }]}
+  >
+    <Fragment slot="subtitle">
+      I'm a UX UI Designer and web developer <br />
+      I'm addicted to well thought-through animations and user experience <br />
+      BASE: TRIER <br />
+      49.7563° N 6.6417° E
+    </Fragment>
+  </Hero>
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'pixel-dark',
+        callToAction: {
+          target: '_blank',
+          text: 'Github',
+          href: '#',
+        },
+      },
+      {
+        icon: 'pixel-dark',
+        callToAction: {
+          target: '_blank',
+          text: 'instagram',
+          href: '#',
+        },
+      },
+      {
+        icon: 'pixel-dark',
+        callToAction: {
+          target: '_blank',
+          text: 'Pinterest',
+          href: '#',
+        },
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <p>
+        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
+        pixel becomes a brushstroke in the canvas of imagination.
+      </p>
+      <br />
+      <p>
+        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
+        details of typography, or the vibrant hues of nature during my outdoor escapades.
+      </p>
+      <br />
+      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <TextScroll upper="CODE" lower="EXPERIMENT" 
+  
+  />
+
   <BlogLatestPosts
-    title="Find out more content in my scroll Blog"
+    title="Code experiments in my scroll Blog"
     information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
+                    Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                    Astro is a very interesting technology. Thanks.
+            `}
+  />
+
+  <UxScroll upper="UXUI" lower="CASES" />
+  <BlogLatestPosts
+    title="UXUI Cases in my scroll Blog"
+    information={`The blog is used to display AstroWind documentation.
+                    Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                    Astro is a very interesting technology. Thanks.
+            `}
   />
   <!-- <WidgetWrapper>
     <iframe
