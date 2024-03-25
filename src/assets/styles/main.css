@@ -32,7 +32,7 @@ p {
 #canvas {
   position: absolute;
   top: 50%;
-  left: 30%;
+  left: -10%;
   z-index: 1; /* 将 canvas 元素置于其他内容之上 */
 }
 

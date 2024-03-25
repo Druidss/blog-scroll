@@ -175,6 +175,13 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
   return posts ? posts.slice(0, _count) : [];
 };
 
+export const findUxPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+  const _count = count || 4;
+  const posts = await fetchPosts();
+
+  return posts ? posts.slice(-_count): [];
+};
+
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];

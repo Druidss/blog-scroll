@@ -1,13 +1,13 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import UxPosts from '~/components/widgets/UxPosts.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import AboutMe from '~/components/widgets/AboutMe.astro';
 import TextScroll from '~/components/ui/TextScroll.astro';
 import UxScroll from '~/components/ui/UXScroll.astro';
-// import Pixel from '~/components/ui/Pixel.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
 const metadata = {
   title: 'YU PIXEL - Yuxuans pixel scroll blog',
@@ -96,21 +96,21 @@ const metadata = {
   />
 
   <UxScroll upper="UXUI" lower="CASES" />
-  <BlogLatestPosts
+  <UxPosts
     title="UXUI Cases in my scroll Blog"
     information={`The blog is used to display AstroWind documentation.
                     Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
                     Astro is a very interesting technology. Thanks.
             `}
   />
-  <!-- <WidgetWrapper>
+  <WidgetWrapper>
     <iframe
       src="https://codesandbox.io/embed/r9jgdk?view=preview&module=%2FApp.js&hidenavigation=1"
       style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
       title="zealous-dust-r9jgdk"
       allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-  </WidgetWrapper> -->
+  </WidgetWrapper>
 
   <Content
     isReversed
@@ -122,19 +122,16 @@ const metadata = {
         description: `An interactive VR installation in the style of a point cloud that shows the invisible traces of online surveillance and the personal data flow in online space`,
       },
       {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+        title: 'Tech',
+        description: 'React-fiber-three, unity',
       },
       {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+        title: 'INPUT',
+        description: 'Random data from the Internet / Cyber security',
       },
       {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+        title: 'Output',
+        description: 'point cloud effect.',
       },
     ]}
     image={{
