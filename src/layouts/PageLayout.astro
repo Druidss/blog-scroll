@@ -3,6 +3,7 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import '~/assets/styles/main.css';
+// import Pixel from '~/components/ui/Pixel.astro';
 // import Announcement from '~/components/widgets/Announcement.astro';
 
 import { headerData, footerData } from '~/navigation';
@@ -17,6 +18,7 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+
   <slot name="header">
     <Header {...headerData} isSticky showRssFeed showToggleTheme />
   </slot>
@@ -24,6 +26,6 @@ const { metadata } = Astro.props;
     <slot />
   </main>
   <slot name="footer">
-    <Footer  {...footerData} />
+    <Footer {...footerData} />
   </slot>
 </Layout>

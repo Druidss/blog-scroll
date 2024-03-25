@@ -27,7 +27,7 @@ const { upper = await Astro.slots.render('upper'), lower = await Astro.slots.ren
     import anime from 'animejs/lib/anime.es.js';
 
     gsap.registerPlugin(ScrollTrigger);
-    splt({ });
+    splt({});
 
     anime
       .timeline({ loop: true })
@@ -58,24 +58,23 @@ const { upper = await Astro.slots.render('upper'), lower = await Astro.slots.ren
       duration: 200,
       fontWeight: '20',
       letterSpacing: '0.5rem',
-      ease: 'back.out(1)',
       startAt: {
         fontWeight: '1000',
-        letterSpacing: '4em',
+        letterSpacing: '1.5em',
       },
     });
 
     gsap.to('.codelabel2', {
       scrollTrigger: {
         trigger: '.codelabel2',
-        start: '-100% center',
+        start: '-100% 60%',
         end: 'bottom center',
+        // markers: true,
         scrub: true,
       },
       duration: 200,
       fontWeight: '100',
       letterSpacing: '0.5rem', // 目标间距
-      ease: 'back.out(1)',
       startAt: {
         fontWeight: '900',
         letterSpacing: '2em',

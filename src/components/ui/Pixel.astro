@@ -1,0 +1,61 @@
+---
+import '~/assets/styles/main.css';
+// p5.js
+---
+
+<div id="canvasContainer"></div>
+
+<style>
+  #canvasContainer {
+  }
+</style>
+
+<script>
+  import p5 from 'p5';
+
+  let sketch = function (p) {
+    let canvas;
+    let img;
+    let tiles = 80;
+    let tilesize;
+
+    p.setup = function () {
+      let divElement = document.getElementById('canvasContainer');
+      canvas = p.createCanvas(p.windowWidth / 2, p.windowHeight / 2, this.WEBGL);
+      canvas.id('canvas');
+      canvas.parent(divElement);
+      img = p.loadImage('https://i.imgur.com/a65z4Sa.jpeg');
+      p.colorMode(p.HSB);
+      p.stroke(255);
+      p.strokeWeight(3);
+    };
+
+    p.draw = function () {
+      p.background(0, 0, 0, 0);
+      p.fill(0);
+      p.noStroke();
+      tilesize = p.windowHeight*0.62 / tiles;
+
+      p.push();
+      p.rotateY(p.radians(p.frameCount));
+      p.translate(p.width / 2, p.height / 2);
+
+      for (let i = 0; i < tiles; i++) {
+        for (let j = 0; j < tiles; j++) {
+          let color = img.get(i * tilesize, j * tilesize);
+          let colorB = p.map(p.brightness(color), 0, 255, 0, 1);
+          let z = p.map(colorB, 0, 1, -100, 100);
+
+          p.push();
+          p.translate(i * tilesize - p.width, j * tilesize - p.height, z);
+          p.box(tilesize * colorB);
+          p.pop();
+        }
+      }
+
+      p.pop();
+    };
+  };
+
+  new p5(sketch);
+</script>

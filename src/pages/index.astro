@@ -4,8 +4,10 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
+import AboutMe from '~/components/widgets/AboutMe.astro';
 import TextScroll from '~/components/ui/TextScroll.astro';
 import UxScroll from '~/components/ui/UXScroll.astro';
+// import Pixel from '~/components/ui/Pixel.astro';
 
 const metadata = {
   title: 'YU PIXEL - Yuxuans pixel scroll blog',
@@ -28,7 +30,7 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <Content
+  <AboutMe
     id="about"
     columns={3}
     items={[
@@ -58,7 +60,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src: '',
       alt: 'Colorful Image',
       loading: 'eager',
     }}
@@ -81,11 +83,9 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </AboutMe>
 
-  <TextScroll upper="CODE" lower="EXPERIMENT" 
-  
-  />
+  <TextScroll upper="CODE" lower="EXPERIMENT" />
 
   <BlogLatestPosts
     title="Code experiments in my scroll Blog"

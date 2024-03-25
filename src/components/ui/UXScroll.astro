@@ -10,8 +10,10 @@ const { upper = await Astro.slots.render('upper'), lower = await Astro.slots.ren
 
 <!-- animejs here -->
 <WidgetWrapper>
-  <div class="splt codelabel3 text-8xl  lg:text-9xl mb-6" set:html={upper} />
-  <div class="splt codelabel4 text-4xl  lg:text-9xl mb-6" set:html={lower} />
+  <div class="uxui">
+    <div class="splt codelabel3 text-8xl lg:text-9xl mb-6" set:html={upper} />
+    <div class="splt codelabel4 text-4xl lg:text-9xl mb-6" set:html={lower} />
+  </div>
   <Fragment slot="bg">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
   </Fragment>
@@ -28,27 +30,28 @@ const { upper = await Astro.slots.render('upper'), lower = await Astro.slots.ren
 
     gsap.to('.codelabel3', {
       scrollTrigger: {
-        trigger: '.codelabel3',
-        start: '-100% center',
-        end: 'bottom center',
-        markers: true,
+        trigger: '.uxui',
+        start: '-60% center',
+        end: 'bottom bottom',
+        // markers: true,
         scrub: true,
       },
-      duration: 200,
+      duration: 600,
       fontWeight: '20',
       letterSpacing: '0.5rem',
       ease: 'back.out(1)',
       startAt: {
         fontWeight: '1000',
-        letterSpacing: '4em',
+        letterSpacing: '1.5em',
       },
     });
 
     gsap.to('.codelabel4', {
       scrollTrigger: {
-        trigger: '.codelabel4',
-        start: '-30% center',
+        trigger: '.uxui',
+        start: '0% 80%',
         end: 'bottom center',
+        // markers: true,
         scrub: true,
       },
       duration: 200,

@@ -21,4 +21,19 @@ p {
     font-family: 'Inter', sans-serif;
 }
 
+/* .canvas-container {
+ position: relative;
+} */
+
+#canvasContainer {
+ position: relative;
+}
+
+#canvas {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  z-index: 1; /* 将 canvas 元素置于其他内容之上 */
+}
+
 
