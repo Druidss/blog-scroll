@@ -4,7 +4,7 @@ author: Yuxuan Yang
 title: TypeLab
 excerpt: This app is a powerful tool for manipulating fonts and generating typography designs
 image: https://i.imgur.com/TbBlGei.jpeg
-category: Tutorials
+category: code
 tags:
   - UXUI
   - typography

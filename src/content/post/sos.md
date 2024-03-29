@@ -4,12 +4,14 @@ author: Yuxuan Yang
 title: S.O.S (sound of smog)
 excerpt: A website accessible both through a browser and VR glasses, using webXR and luma ai
 image: https://i.imgur.com/5BBhauW.jpeg
-category: Tutorials
+category: code
 tags:
   - code
-  - VR
+  - Virtual Mixed Reality
   - react
   - luma AI
+  - Prof. Christopher Ledwig
+  - WS2023 24
 metadata:
   canonical: https://github.com/Druidss/SOS
 ---

@@ -15,11 +15,11 @@ export const headerData = {
         },
         {
           text: 'UX/UI',
-          href: getPermalink('UX', 'UI'),
+          href: getPermalink('uxui', 'tag'),
         },
         {
           text: 'Code',
-          href: getPermalink('Code', 'js'),
+          href: getPermalink('code', 'tag'),
         },
       ],
     },

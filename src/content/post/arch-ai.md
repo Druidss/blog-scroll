@@ -19,7 +19,6 @@ metadata:
 ![code](../../assets/images/archai/surprise.png)
 ![code](../../assets/images/archai/archiCode.png)
 ![surprise](https://i.imgur.com/o3lTZ7j.png)
-
 ![fazit](https://i.imgur.com/lzTYSfU.png)
 
 

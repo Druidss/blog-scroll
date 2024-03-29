@@ -7,7 +7,9 @@ tags:
   - p5.js
   - facemesh
   - code
-  - SS2023  Intermediale Ästhetik
+  - SS2023  
+  - Intermediale Ästhetik
+  - Prof. Gregor Kuschmirz
 ---
 
 

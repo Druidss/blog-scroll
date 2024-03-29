@@ -4,7 +4,7 @@ author: Yuxuan Yang
 title: private kitchen
 excerpt: This project is aimed at fast-paced young people in big cities who want a private kitchen where they can quickly experience the "taste of home."
 image: https://i.imgur.com/q1On2T1.png
-category: Tutorials
+category: uxui
 tags:
   - UXUI
   - private kitchen

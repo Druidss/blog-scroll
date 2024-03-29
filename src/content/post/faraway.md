@@ -4,7 +4,7 @@ author: Yuxuan Yang
 title: Faraway
 excerpt: FARAWAY is an application that enables people to take part in fashion events worldwide without having to be physically present.
 image: https://i.imgur.com/OC55MKe.png
-category: Tutorials
+category: uxui
 tags:
   - UXUI
   - faraway
