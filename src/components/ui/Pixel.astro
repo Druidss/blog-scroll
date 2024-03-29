@@ -34,11 +34,13 @@ import '~/assets/styles/main.css';
       p.background(0, 0, 0, 0);
       p.fill(0);
       p.noStroke();
-      tilesize = p.windowHeight*0.62 / tiles;
+      tilesize = (p.windowHeight * 0.62) / tiles;
 
       p.push();
-      p.rotateY(p.radians(p.frameCount));
-      p.translate(p.width / 3, p.height / 3);
+
+      // p.rotateY(p.radians(p.frameCount));
+
+      // p.camera(0, 0, 50 * p.sqrt(3), 0, 0, 0, 0, 1, 0);
 
       for (let i = 0; i < tiles; i++) {
         for (let j = 0; j < tiles; j++) {
@@ -48,11 +50,14 @@ import '~/assets/styles/main.css';
 
           p.push();
           p.translate(i * tilesize - p.width, j * tilesize - p.height, z);
+          p.fill(0, 0, 128);
           p.box(tilesize * colorB);
           p.pop();
         }
       }
 
+      p.translate(p.width / 2, p.height / 2);
+      p.rotateY(p.frameCount * 0.01);
       p.pop();
     };
   };
