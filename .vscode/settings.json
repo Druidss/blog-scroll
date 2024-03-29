@@ -8,8 +8,9 @@
     "typescriptreact"
   ],
   "files.associations": {
-    "*.mdx": "markdown"
+    "*.mdx": "mdx"
   },
+  
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"

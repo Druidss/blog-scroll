@@ -8,11 +8,21 @@ category: code
 tags:
   - UXUI
   - typography
+  - SS203
+  - Adam Lorek
+  - screendeisgn
 metadata:
   canonical: https://github.com/Druidss/SOS
 ---
 
-## WHY
+![1-what](../../assets/images/screendesign/5.png)
+![1-what](../../assets/images/screendesign/6.png)
+![1-what](../../assets/images/screendesign/7.png)
+![1-what](../../assets/images/screendesign/8.png)
+![1-what](../../assets/images/screendesign/9.png)
+![1-what](../../assets/images/screendesign/10.png)
+![1-what](../../assets/images/screendesign/11.png)
+![1-what](../../assets/images/screendesign/12.png)
 
 
 

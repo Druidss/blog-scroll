@@ -8,13 +8,19 @@ category: uxui
 tags:
   - UXUI
   - faraway
+  - Lars-Becker
+  - SS2022 
+  - crossmedia
 metadata:
   canonical: https://github.com/Druidss/SOS
 ---
 
-## WHY
-
-
-
-## Link
+![1-what](../../assets/images/far/5.png)
+![1-what](../../assets/images/far/6.png)
+![1-what](../../assets/images/far/7.png)
+![1-what](../../assets/images/far/8.png)
+![1-what](../../assets/images/far/9.png)
+![1-what](../../assets/images/far/10.png)
+![1-what](../../assets/images/far/11.png)
+![1-what](../../assets/images/far/12.png)
 

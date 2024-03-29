@@ -37,8 +37,10 @@ import '~/assets/styles/main.css';
       tilesize = (p.windowHeight * 0.62) / tiles;
 
       p.push();
+      
 
-      // p.rotateY(p.radians(p.frameCount));
+      p.rotateY(p.radians(p.frameCount));
+      p.translate(p.width / 2, p.height / 2);
 
       // p.camera(0, 0, 50 * p.sqrt(3), 0, 0, 0, 0, 1, 0);
 
@@ -56,8 +58,6 @@ import '~/assets/styles/main.css';
         }
       }
 
-      p.translate(p.width / 2, p.height / 2);
-      p.rotateY(p.frameCount * 0.01);
       p.pop();
     };
   };
