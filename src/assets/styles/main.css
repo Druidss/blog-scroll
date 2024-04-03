@@ -7,23 +7,10 @@
     font-style: normal;
     font-display: swap;
   }
-  /* @font-face {
-    font-family: 'DePixelHalbfett';
-    src: url('../fonts/DePixelHalbfett.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  } */
-
-  
 
 p {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
-
-/* .canvas-container {
- position: relative;
-} */
 
 #canvasContainer {
  position: relative;
