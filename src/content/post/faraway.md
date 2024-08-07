@@ -1,5 +1,5 @@
 ---
-publishDate: 2022-08-10T00:00:00Z
+publishDate: 2023-01-10T00:00:00Z
 author: Yuxuan Yang
 title: Faraway
 excerpt: FARAWAY is an application that enables people to take part in fashion events worldwide without having to be physically present.

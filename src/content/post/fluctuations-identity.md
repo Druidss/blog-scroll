@@ -12,6 +12,7 @@ tags:
   - Prof. Gregor Kuschmirz
 ---
 
+# [LINK](https://typoface.vercel.app/)
 
 
 ## Concept
@@ -22,7 +23,7 @@ this project aims to merge real-time facial information of users with the statue
 
 ## Brief
 
-At the first appointment, we selected 2 images from current print media. Together we will analyze them in terms of form and content. Individual combinations of individual aspects form the starting point for the development of the design projects.
+At the first appointment, we selected 2 images from current print media. Together we discussed the images and their content, then analyzed them in terms of form and content. Individual combinations of individual aspects form the starting point for the development of the design projects.
 
 ![brainStorm](https://i.imgur.com/85itpGF.png)
 
